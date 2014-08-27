@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  database: wikifulredux_development
+  encoding: unicode
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+
+test:
+  adapter: postgresql
+  database: wikifulredux_test
+  encoding: unicode
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+
+production:
+  adapter: postgresql
+  database: wikifulredux_production
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  
