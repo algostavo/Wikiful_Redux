@@ -17,7 +17,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
   #config.include FactoryGirl::Syntax::Methods
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
+  #config.include Capybara::DSL#, :type => :feature
   #config.include(UserHelper)
   # config.mock_with :mocha
   #config.expose_current_running_example_as :example

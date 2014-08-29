@@ -4,16 +4,19 @@ WikifulRedux::Application.routes.draw do
   #get "sessions/new"
   resources :users
   root :to =>"home#index"
-  match '/login', to: 'session#create',    via: :post
+  match '/login', to: 'sessions#create',    via: :post
+  get 'signup', to: 'users#new', as: 'signup'
   
-  resource :session
+  
+  resources :sessions
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  resource :articles
-  resource :categories
+  resources :articles
+  resources :categories
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

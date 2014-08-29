@@ -3,7 +3,13 @@
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 	</div>
-	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
-
+	
+	<div class="field">
+		<%= f.label :text %>
+		<%= f.text_field :text %>
+		<%= f.text_area :text %>
+	</div>
+	
+	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
 
 <% end %>

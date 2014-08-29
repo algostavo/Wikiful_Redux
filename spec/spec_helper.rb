@@ -4,8 +4,12 @@
 # file to always be loaded, without a need to explicitly require it in any files.
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
+require 'rspec/rails'
 require 'capybara/rspec'
+include Capybara::DSL
 require 'factory_girl_rails'
+
+
 #require 'rspec/active_model/mocks'
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
@@ -21,34 +25,29 @@ require 'factory_girl_rails'
 RSpec.configure do |config|
 
     config.include FactoryGirl::Syntax::Methods
-    # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
     #config.include(UserHelper)
-    # config.mock_with :mocha
-    
-    #config.expose_current_running_example_as :example
-    # config.mock_with :rr
-    #config.raise_errors_for_deprecations!
-    # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-    #config.fixture_path = "#{::Rails.root}/spec/fixtures"
+     # config.mock_with :mocha
+     #config.expose_current_running_example_as :example
+     # config.mock_with :rr
+     #config.raise_errors_for_deprecations!
+     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+     config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-    # If you're not using ActiveRecord, or you'd prefer not to run each of your
-    # examples within a transaction, remove the following line or assign false
-    # instead of true.
-    #config.use_transactional_fixtures = true
+     # If you're not using ActiveRecord, or you'd prefer not to run each of your
+     # examples within a transaction, remove the following line or assign false
+     # instead of true.
+     config.use_transactional_fixtures = true
 
-    # If true, the base class of anonymous controllers will be inferred
-    # automatically. This will be the default behavior in future versions of
-    # rspec-rails.
-    #config.infer_base_class_for_anonymous_controllers = false
+     # If true, the base class of anonymous controllers will be inferred
+     # automatically. This will be the default behavior in future versions of
+     # rspec-rails.
+     #config.infer_base_class_for_anonymous_controllers = false
 
-    #config.warnings = true
-    # Run specs in random order to surface order dependencies. If you find an
-    # order dependency and want to debug it, you can fix the order by providing
-    # the seed, which is printed after each run.
-    #     --seed 1234
-    #config.order = "random"
-
-    #config.infer_spec_type_from_file_location!
+     # Run specs in random order to surface order dependencies. If you find an
+     # order dependency and want to debug it, you can fix the order by providing
+     # the seed, which is printed after each run.
+     #     --seed 1234
+     #config.order = "random"
     
 =begin
   # These two settings work together to allow you to limit a spec run
