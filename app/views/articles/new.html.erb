@@ -1,15 +1,24 @@
-<%= form_for @article do |f| %>
-	<div class="field">
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
-	
-	<div class="field">
-		<%= f.label :text %>
-		<%= f.text_field :text %>
-		<%= f.text_area :text %>
-	</div>
-	
-	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+<h1>Articles to Read!</h1>
 
-<% end %>
+	<%= form_for Article.new do |f| %>
+	<h1>Articles to Read!</h1>
+	  <div class="field">
+	    <%= f.label :title, "title" %>
+	      <%= f.text_field :title %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :text, "text" %>
+	      <%= f.text_area :text, rows: "20", cols: "100" %>
+	  </div>
+
+	  <div class='field'>
+	    <%= f.label :title, 'Enter a category' %>
+	    <%= f.label :title %>
+	  </div>
+
+	  <div class="form-actions">
+	    <%= f.submit nil %>
+	    <%= link_to 'Cancel', articles_path %>
+	  </div>
+	<% end %>
+	

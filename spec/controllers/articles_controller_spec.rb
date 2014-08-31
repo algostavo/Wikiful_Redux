@@ -4,7 +4,7 @@ require 'spec_helper'
 describe ArticlesController do
   describe "POST create" do
    let(:article) do
-      mock_model Article.as_null_object
+      mock_model(Article).as_null_object
     end
     
     before do

@@ -1,22 +1,20 @@
-<h1>Articles to Read!</h1>
-	<%= form_for @article do |f| %>
+<h1>Enter your article here! </h1>
+
+	<%= form_for Article.new do |f| %>
+	  
+	  <div class='field'>
+	    <%= f.label :title, 'category' %>
+	    <%= f.text_field :title %>
+	  </div>
+	  
 	  <div class="field">
-	    <%= f.label :title %>
+	    <%= f.label :title, "title" %>
 	      <%= f.text_field :title %>
 	  </div>
+	  
 	  <div class="field">
-	    <%= f.label :text %>
+	    <%= f.label :text, "text" %>
 	      <%= f.text_area :text, rows: "20", cols: "100" %>
-	  </div>
-
-	  <div class='field'>
-	    <%= f.label 'Enter or select a category' %>
-	    <% Category.all.order(title: :asc).each do |category| %>
-	      <div>
-	        <%= check_box_tag "article[category_ids][]", category.id %>
-	        <%= category.name %>
-	      </div>
-	    <% end %>
 	  </div>
 
 	  <div class="form-actions">

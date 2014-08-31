@@ -36,7 +36,7 @@ describe "articles/new.html.erb" do
     render
     rendered.should have_selector("form") do |form|
       form.should have_selector("textarea",
-      :name => "message[text]",
+      :name => "text[text]",
       :content => "the article" 
       )
     end
