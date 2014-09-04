@@ -20,9 +20,9 @@ RSpec.configure do |config|
   #config.include Capybara::DSL#, :type => :feature
   #config.include(UserHelper)
   # config.mock_with :mocha
-  #config.expose_current_running_example_as :example
+  config.expose_current_running_example_as :example
   # config.mock_with :rr
-  #config.raise_errors_for_deprecations!
+  config.raise_errors_for_deprecations!
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

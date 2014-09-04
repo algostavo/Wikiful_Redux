@@ -10,7 +10,7 @@ WikifulRedux::Application.routes.draw do
   resources :users
   match '/login', to: 'sessions#create',    via: :post
 
-  #get 'signup', to: 'users#new', as: 'signup'
+  get 'signup', to: 'users#new', as: 'signup'
   root :to =>"home#index"
 
   
