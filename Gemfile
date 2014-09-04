@@ -7,11 +7,7 @@ gem 'pg'
 
 gem 'rake', '0.9.2'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 
 group :development, :test do
@@ -24,6 +20,5 @@ group :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'growl'
-  #gem 'rspec-activemodel-mocks' #, '~> 1.0.1'
 end
 

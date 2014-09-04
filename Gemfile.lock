@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (2.1.2)
     capybara (2.0.2)
       mime-types (>= 1.16)
@@ -140,6 +141,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (~> 3.0.0)
   capybara (~> 2.0.2)
   factory_girl_rails (~> 4.0)
   growl

@@ -1,7 +1,6 @@
 <h1>Articles to Read!</h1>
 
 	<%= form_for Article.new do |f| %>
-	<h1>Articles to Read!</h1>
 	  <div class="field">
 	    <%= f.label :title, "title" %>
 	      <%= f.text_field :title %>
@@ -13,7 +12,7 @@
 
 	  <div class='field'>
 	    <%= f.label :title, 'Enter a category' %>
-	    <%= f.label :title %>
+	    <%= f.text_field :title %>
 	  </div>
 
 	  <div class="form-actions">

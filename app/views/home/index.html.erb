@@ -1,6 +1,20 @@
-<div class="page-header">
-	<h1>WikiFul Redux</h1>
 
+	<h1>WikiFul Redux</h1>
+<h3>Here are some recent articles</h3> 
+
+<% @article_recent = Article.order('created_at DESC').limit(3) %>
+<% @article_recent.each do |article| %>
+
+	<ul>
+		<h5><%= link_to article.title, article %><h5>
+			<p> Published on <%= article.created_at.strftime('%b, %d, %Y')%></p>
+			<p> Authored by <%=  article.user %> </p>
+		
+			<p><%= truncate(article.text, length: 100) %></p>
+		
+	</ul>
+<% end %>
+	
 	<%= link_to "Sign Up", signup_path %>
 	<%= link_to "Log In",  login_path %>
 	<%= link_to "Log Out", "/session", :method => "DELETE" %>

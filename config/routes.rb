@@ -1,17 +1,17 @@
 WikifulRedux::Application.routes.draw do
-  get 'home/index'
   
-  resources :sessions
-  get "logout" => "sessions#destroy", :as => "logout"
-  get "login" => "sessions#new", :as => "login"
-  get "signup" => "users#new", :as => "signup"
-  
+  resources :sessions#, only: [:new,:create,:destroy]
+  get "/logout" => "sessions#destroy", :as => "logout"
+  get "/login" => "sessions#new", :as => "login"
+  get "/signup" => "users#new", :as => "signup"
+
    
-  resources :users
-  root :to =>"home#index"
-  match '/login', to: 'sessions#create',    via: :post
-  get 'signup', to: 'users#new', as: 'signup'
   
+  resources :users
+  match '/login', to: 'sessions#create',    via: :post
+
+  #get 'signup', to: 'users#new', as: 'signup'
+  root :to =>"home#index"
 
   
   # The priority is based upon order of creation:
